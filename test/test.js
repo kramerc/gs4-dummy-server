@@ -55,11 +55,13 @@ describe('gs4DummyServer', function () {
         host: address.address,
         port: address.port
       }, function (state) {
+        server.close();
+
         if (state.error) {
-          throw new Error(state.error);
+          done(new Error(state.error));
+          return;
         }
 
-        server.close();
         done();
       });
     });
