@@ -1,6 +1,6 @@
 {
   "name": "gs4-dummy-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A dummy GS4 query server for testing.",
   "main": "index.js",
   "scripts": {
