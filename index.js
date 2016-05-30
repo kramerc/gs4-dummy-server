@@ -6,7 +6,8 @@ module.exports = Promise.method(function (port, address) {
   var server = dgram.createSocket('udp4');
 
   var promise = promisify(server, {
-    resolve: 'listening'
+    resolve: 'listening',
+    reject: 'error'
   });
 
   server.on('message', function (msg, rinfo) {
