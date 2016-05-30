@@ -43,7 +43,7 @@ module.exports = Promise.method(function (port, address) {
       rmsgStr += 'hostport\x0012345\x00';
       rmsgStr += 'hostip\x00127.0.0.1\x00\x00';
       rmsgStr += '\x01\x70\x6C\x61\x79\x65\x72\x5F\x00\x00';
-      var rmsg = new Buffer(rmsgStr, 'ascii');
+      var rmsg = new Buffer(rmsgStr, 'binary');
       reply(rmsg);
     }
   });
