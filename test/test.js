@@ -4,7 +4,13 @@ var gamedig = require('gamedig');
 var gs4DummyServer = require('..');
 
 function generatePort() {
-  return parseInt(Math.random() * 10000, 10);
+  var port = parseInt(Math.random() * 10000, 10);
+
+  if (port < 1024) {
+    port += 1024;
+  }
+
+  return port;
 }
 
 describe('gs4DummyServer', function () {
