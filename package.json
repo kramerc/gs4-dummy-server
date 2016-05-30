@@ -1,14 +1,14 @@
 {
   "name": "gs4-dummy-server",
-  "version": "1.0.1",
   "description": "A dummy GS4 query server for testing.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kramerc/gs4-dummy-server.git"
+    "url": "https://github.com/kramerc/gs4-dummy-server.git"
   },
   "author": "Kramer Campbell <kramer@kramerc.com>",
   "license": "MIT",
@@ -22,7 +22,14 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "cz-conventional-changelog": "^1.1.6",
     "gamedig": "^0.2.24",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "semantic-release": "^4.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
