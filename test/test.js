@@ -25,13 +25,13 @@ describe('gs4DummyServer', function () {
   it('errors if the address is already in use', function () {
     var port = generatePort();
 
-    return gs4DummyServer(port).then(function (server) {
+    return gs4DummyServer(port).then(function () {
       return gs4DummyServer(port).then(function () {
         throw new Error('Test failed');
       }).catch(function () {
         // Test passed
-      })
-    })
+      });
+    });
   });
 
   it('takes a port', function () {

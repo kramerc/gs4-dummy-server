@@ -17,10 +17,11 @@ module.exports = Promise.method(function (port, address) {
 
     var sessionId = msg.readUInt32BE(3);
     var challenge = '1234567';
+    var rmsg, rmsgStr;
 
     if (rinfo.size === 7) {
       // Handshake
-      var rmsg = new Buffer(13);
+      rmsg = new Buffer(13);
       rmsg.write('\x09', 0);
       rmsg.writeUInt32BE(sessionId, 1);
       rmsg.write(challenge, 5);
@@ -28,7 +29,7 @@ module.exports = Promise.method(function (port, address) {
       reply(rmsg);
     } else if (rinfo.size === 15) {
       // Data response
-      var rmsgStr = '';
+      rmsgStr = '';
       rmsgStr += '\x00';
       rmsgStr += '\x00\x00\x00\x01';
       rmsgStr += 'splitnum\x00';
@@ -44,7 +45,7 @@ module.exports = Promise.method(function (port, address) {
       rmsgStr += 'hostport\x0012345\x00';
       rmsgStr += 'hostip\x00127.0.0.1\x00\x00';
       rmsgStr += '\x01\x70\x6C\x61\x79\x65\x72\x5F\x00\x00';
-      var rmsg = new Buffer(rmsgStr, 'binary');
+      rmsg = new Buffer(rmsgStr, 'binary');
       reply(rmsg);
     }
   });
