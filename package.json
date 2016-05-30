@@ -1,0 +1,23 @@
+{
+  "name": "gs4-dummy-server",
+  "version": "1.0.0",
+  "description": "A dummy GS4 query server for testing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kramerc/gs4-dummy-server.git"
+  },
+  "author": "Kramer Campbell <kramer@kramerc.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kramerc/gs4-dummy-server/issues"
+  },
+  "homepage": "https://github.com/kramerc/gs4-dummy-server#readme",
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "bluebird-events": "^2.0.0"
+  }
+}
